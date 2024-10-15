@@ -1,0 +1,37 @@
+@import com.arakviel.eventlistenerdemo.entity.User
+@import java.util.List
+@param List<User> users
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список користувачів</title>
+</head>
+<body>
+<h1>Список користувачів</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Електронна пошта</th>
+        <th>Роль</th>
+        <th>Дата створення</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Перебираємо користувачів і виводимо їх у таблиці -->
+    @for (User user : users)
+        <tr>
+            <td>${user.getId()}</td>
+            <td>${user.getEmail()}</td>
+            <td>${user.getRole()}</td>
+            <td>${user.getCreatedAt() != null ? user.getCreatedAt().toString() : "Невідомо"}</td>
+        </tr>
+    @endfor
+    </tbody>
+</table>
+</body>
+</html>

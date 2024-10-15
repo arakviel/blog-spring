@@ -1,0 +1,4 @@
+package com.arakviel.eventlistenerdemo.repository;
+
+public interface UserRepository {
+}
